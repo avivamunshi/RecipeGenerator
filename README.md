@@ -4,9 +4,9 @@
 
 
 ## Team Members:
-Aviva Munshi
-Saumya Nauni
-Nizan Howard 
+Aviva Munshi<br>
+Saumya Nauni<br>
+Nizan Howard<br>
 
 
 ### Project type: 
@@ -14,11 +14,13 @@ Tool: Web Application (Streamlit)
 
 
 ### Questions of interest: 
-How can the recipe be generated in a random manner? 
-How do we make sure that only one recipe is the output with many recipes being possible?
-What additional filters can we have apart from the recipe ingredients? (Can we add label types or filters?) For eg - cuisine type, calories limit, time duration
+1. How can the recipe be generated in a random manner?<br> 
+2. How do we make sure that only one recipe is the output with many recipes being possible?<br>
+3. What additional filters can we have apart from the recipe ingredients? (Can we add label types or filters?) For eg - cuisine type, calories limit, time duration
+
+
 ### Input/Output:
-Input: List of ingredients 
+Input: List of ingredients<br>
 Output: one random recipe produced based on input. 
 
 
@@ -27,12 +29,12 @@ The goal is to build a Streamlit web application that can generate a single reci
 
 
 ### Data sources: 
-[Recipe Ingredients Dataset]([url](https://www.kaggle.com/datasets/kaggle/recipe-ingredients-dataset?select=test.json))
-[Recipe Box]([url](https://eightportions.com/datasets/Recipes/#fn:1))
-https://yum.computer/Recipes
-https://www.epicurious.com/
-https://www.food.com/
-https://www.allrecipes.com/
-https://www.bonappetit.com/recipes
-https://www.foodnetwork.com/recipes/
+[Recipe Ingredients Dataset]([url](https://www.kaggle.com/datasets/kaggle/recipe-ingredients-dataset?select=test.json)).<br>
+[Recipe Box]([url](https://eightportions.com/datasets/Recipes/#fn:1))<br>
+https://yum.computer/Recipes<br>
+https://www.epicurious.com/<br>
+https://www.food.com/<br>
+https://www.allrecipes.com/<br>
+https://www.bonappetit.com/recipes<br>
+https://www.foodnetwork.com/recipes/<br>
 https://www.tasteofhome.com/recipes/
