@@ -1,6 +1,3 @@
-# RecipeGenerator
-
-
 ## Team Members:
 Aviva Munshi<br>
 Saumya Nauni<br>
