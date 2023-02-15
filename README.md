@@ -1,7 +1,5 @@
 # RecipeGenerator
 
-## Title: Recipe Generator 
-
 
 ## Team Members:
 Aviva Munshi<br>
