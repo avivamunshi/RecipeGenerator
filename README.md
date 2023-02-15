@@ -29,8 +29,8 @@ The goal is to build a Streamlit web application that can generate a single reci
 
 
 ### Data sources: 
-[Recipe Ingredients Dataset]([url](https://www.kaggle.com/datasets/kaggle/recipe-ingredients-dataset?select=test.json)).<br>
-[Recipe Box]([url](https://eightportions.com/datasets/Recipes/#fn:1))<br>
+https://www.kaggle.com/datasets/kaggle/recipe-ingredients-dataset?select=test.json.<br>
+https://eightportions.com/datasets/Recipes/#fn:1<br>
 https://yum.computer/Recipes<br>
 https://www.epicurious.com/<br>
 https://www.food.com/<br>
