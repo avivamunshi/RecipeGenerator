@@ -108,7 +108,7 @@ Functions:
 
 # Interaction Diagram
 
-![Figure](/Images/Interactive.jpeg)
+![Figure](/images/Interactive.jpeg)
 
 # Milestone (Preliminary Plan):
 
