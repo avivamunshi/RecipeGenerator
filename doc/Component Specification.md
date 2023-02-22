@@ -108,7 +108,7 @@ Functions:
 
 # Interaction Diagram
 
-![Figure](/Users/saumya.nauni/Desktop/Interactive.jpeg)
+![Figure](/Images/Interactive.jpeg)
 
 # Milestone (Preliminary Plan):
 
