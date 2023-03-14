@@ -1,3 +1,5 @@
+[![Coverage Status](https://coveralls.io/repos/github/avivamunshi/RecipeGenerator/badge.svg?branch=main)](https://coveralls.io/github/avivamunshi/RecipeGenerator?branch=main)
+
 ## Team Members:
 Aviva Munshi<br>
 Saumya Nauni<br>
