@@ -1,4 +1,5 @@
 """This module contains functions for finding recipes based on a list of ingredients."""
+import os
 import csv
 import json
 import random
@@ -6,15 +7,25 @@ from recipe_scrapers import scrape_me
 
 recipe_json_list = []
 
-with open('/Users/aviva/Documents/RecipeGenerator/web_links.csv') as file:
-    reader = csv.reader(file)
-    for row in reader:
-        url = row[0]
-        scraper = scrape_me(url, wild_mode=True)
-        recipe_json_list.append(scraper.to_json())
+# get the absolute path of the directory containing this script
+function_dir = os.path.dirname(os.path.abspath(__file__))
 
-with open('recipe_json_list.txt', 'w') as file:
-    #this has now been written to original_recipe_json_list.txt
+# construct the path to the CSV file using the script directory as the base path
+csv_path = os.path.join(function_dir, '../Code/web_links.csv')
+
+# check if the CSV file exists before proceeding
+if os.path.exists(csv_path):
+    with open(csv_path, encoding='utf-8') as file:
+        reader = csv.reader(file)
+        recipe_json_list = []
+        for row in reader:
+            url = row[0]
+            scraper = scrape_me(url, wild_mode=True)
+            recipe_json_list.append(scraper.to_json())
+else:
+    print("Error: Could not find web_links.csv file.")
+
+with open('recipe_json_list.txt', 'w', encoding='utf-8') as file:
     json.dump(recipe_json_list, file)
 
 def find_recipe(ingredients, refresh=False):
@@ -34,15 +45,21 @@ def find_recipe(ingredients, refresh=False):
 j   son.JSONDecodeError: If the recipe data file cannot be decoded.
     """
 
+    # get the absolute path of the directory containing this script
+    script_dir = os.path.dirname(os.path.abspath(__file__))
+
+    # construct the path to the JSON file using the script directory as the base path
+    json_path = os.path.join(script_dir, 'recipe_json_list.txt')
+
     try:
-        with open('/Users/aviva/Documents/RecipeGenerator/original_recipe_json_list.txt','r')as f_1:
+        with open(json_path, 'r', encoding='utf-8') as f_1:
             recipe_data = json.load(f_1)
     except FileNotFoundError:
         print("The recipe data file could not be found.")
-        return None
+        recipe_data = None
     except json.JSONDecodeError:
         print("The recipe data file could not be decoded.")
-        return None
+        recipe_data = None
 
     if refresh:
         random.shuffle(recipe_data)

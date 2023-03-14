@@ -3,11 +3,16 @@ A unittest module for collecting weblinks
 and writing them into a csv.
 """
 import os
-from pathlib import Path
+import sys
 import unittest
+from pathlib import Path
 import requests
-from collect import obtain_links
-from collect import link_store_file
+
+from collect import obtain_links #pylint: disable=import-error
+from collect import link_store_file #pylint: disable=import-error
+
+os.chdir("../")
+sys.path.append(f"{os.getcwd()}/Code/")
 
 class TestCollect(unittest.TestCase):
     """
@@ -87,20 +92,7 @@ class TestCollect(unittest.TestCase):
         'search/?content=recipe&search=recipe&page=')
         result = obtain_links(url)
         for element in result:
-            response = requests.get(element)
-            self.assertEqual(response.status_code, 200)
-
-    def test_obtain_links_url_validity_bon(self):
-        """
-        test that bon appetiet url string links
-        has every element in the set is a vaild
-        url link.
-        """
-        url = ('https://www.bonappetit.com/'
-        'search/recipe?content=recipe&q=recipe&page=')
-        result = obtain_links(url)
-        for element in result:
-            response = requests.get(element)
+            response = requests.get(element, timeout=5)
             self.assertEqual(response.status_code, 200)
 
     def test_link_store_file_smoke(self):

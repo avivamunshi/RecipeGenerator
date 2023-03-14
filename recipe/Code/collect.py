@@ -60,10 +60,7 @@ def obtain_links(url_baselink):
         if not isinstance(element, str):
             raise ValueError("The recipe link is not"
             " a string data type")
-        response = requests.get(element)
-        if response.status_code != 200:
-            raise ValueError(" Web link is not "
-            "not valid.")
+
     return web_links
 
 def link_store_file(set_links):
@@ -83,9 +80,9 @@ def link_store_file(set_links):
         "The links of a web is not conainted"+
         "as a set data type.")
 
-    path = Path('./web_links.csv')
+    path = Path('./Code/web_links.csv')
     mode = 'a' if path.is_file() else 'w'
-    with open('web_links.csv', mode, newline='') as csvfile:
+    with open('web_links.csv', mode, newline='', encoding="utf8") as csvfile:
         writer = csv.writer(csvfile)
         writer.writerows([[link] for link in set_links])
 

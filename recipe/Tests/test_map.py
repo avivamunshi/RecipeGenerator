@@ -1,7 +1,20 @@
 """Module to test the 'find_recipe' function from the 'final_mapping_code' module."""
 import unittest
+import sys
+import os
 from unittest.mock import mock_open, patch
-from map import find_recipe
+#sys.path.insert(1, f"{os.getcwd()}/Code")
+
+from map import find_recipe #pylint: disable=import-error
+
+#from pathlib import Path
+os.chdir("../")
+sys.path.append(f"{os.getcwd()}/Code/")
+
+# why we're getting a warning for map and other related variables
+# the code is running inside the test folder
+# but on the backend we've changed the system path to Code
+# so while running its looking for the map file inside the Test folder
 
 class TestFindRecipe(unittest.TestCase):
     """Test class for the find_recipe function"""
