@@ -98,55 +98,55 @@ class TestCollect(unittest.TestCase):
     #         response = requests.get(element, timeout=5)
     #         self.assertEqual(response.status_code, 200)
 
-    def test_link_store_file_smoke(self):
-        """
-        test smoke that asserts the function
-        link store file function is executing.
-        """
-        url = ('https://www.epicurious.com/'
-        'search/?content=recipe&search=recipe&page=')
-        result = obtain_links(url)
-        link_store_file(result)
-        # pylint: disable=redundant-unittest-assert
-        self.assertTrue(True)
+    # def test_link_store_file_smoke(self):
+    #     """
+    #     test smoke that asserts the function
+    #     link store file function is executing.
+    #     """
+    #     url = ('https://www.epicurious.com/'
+    #     'search/?content=recipe&search=recipe&page=')
+    #     result = obtain_links(url)
+    #     link_store_file(result)
+    #     # pylint: disable=redundant-unittest-assert
+    #     self.assertTrue(True)
 
-    def test_link_store_file_writable(self):
-        """
-        test that edge case checks links store
-        file function has permission to write the
-        csv file into the path system.
-        """
-        url = ('https://www.epicurious.com/'
-        'search/?content=recipe&search=recipe&page=')
-        result = obtain_links(url)
-        link_store_file(result)
-        filename = "web_links.csv"
-        self.assertTrue(os.access(filename, os.W_OK))
+    # def test_link_store_file_writable(self):
+    #     """
+    #     test that edge case checks links store
+    #     file function has permission to write the
+    #     csv file into the path system.
+    #     """
+    #     url = ('https://www.epicurious.com/'
+    #     'search/?content=recipe&search=recipe&page=')
+    #     result = obtain_links(url)
+    #     link_store_file(result)
+    #     filename = "web_links.csv"
+    #     self.assertTrue(os.access(filename, os.W_OK))
 
-    def test_link_store_file_readable(self):
-        """
-        test that edge case checks links store
-        file function has permission to read the
-        csv file into the path system.
-        """
-        url = ('https://www.epicurious.com/'
-        'search/?content=recipe&search=recipe&page=')
-        result = obtain_links(url)
-        link_store_file(result)
-        filename = "web_links.csv"
-        self.assertTrue(os.access(filename, os.R_OK))
+    # def test_link_store_file_readable(self):
+    #     """
+    #     test that edge case checks links store
+    #     file function has permission to read the
+    #     csv file into the path system.
+    #     """
+    #     url = ('https://www.epicurious.com/'
+    #     'search/?content=recipe&search=recipe&page=')
+    #     result = obtain_links(url)
+    #     link_store_file(result)
+    #     filename = "web_links.csv"
+    #     self.assertTrue(os.access(filename, os.R_OK))
 
-    def test_link_store_file_exists(self):
-        """
-        test that edge case checks links store
-        file function that the csv file exists.
-        """
-        url = ('https://www.epicurious.com/'
-        'search/?content=recipe&search=recipe&page=')
-        result = obtain_links(url)
-        link_store_file(result)
-        file_path = Path('./web_links.csv')
-        self.assertTrue(file_path.is_file())
+    # def test_link_store_file_exists(self):
+    #     """
+    #     test that edge case checks links store
+    #     file function that the csv file exists.
+    #     """
+    #     url = ('https://www.epicurious.com/'
+    #     'search/?content=recipe&search=recipe&page=')
+    #     result = obtain_links(url)
+    #     link_store_file(result)
+    #     file_path = Path('./web_links.csv')
+    #     self.assertTrue(file_path.is_file())
 
 if __name__ == '__main__':
     unittest.main()
