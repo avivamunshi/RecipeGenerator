@@ -1,5 +1,4 @@
 """This module contains functions for finding recipes based on a list of ingredients."""
-import os
 import json
 import random
 
