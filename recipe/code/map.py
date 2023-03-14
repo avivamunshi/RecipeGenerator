@@ -57,9 +57,6 @@ j   son.JSONDecodeError: If the recipe data file cannot be decoded.
     except FileNotFoundError:
         print("The recipe data file could not be found.")
         recipe_data = None
-    except IOError:
-        print ("An error occurred while trying to read the recipe data file.")
-        recipe_data = None
     except json.JSONDecodeError:
         print("The recipe data file could not be decoded.")
         recipe_data = None
