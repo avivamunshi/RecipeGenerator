@@ -61,7 +61,7 @@ j   son.JSONDecodeError: If the recipe data file cannot be decoded.
     #     recipe_data = None
 
     try:
-        with open('recipe_data.json', 'r', encoding='utf-8') as file:
+        with open('recipe_json_list.txt', 'r', encoding='utf-8') as file:
             recipe_data = json.load(file)
     except FileNotFoundError:
         print ("The recipe data file could not be found.")
