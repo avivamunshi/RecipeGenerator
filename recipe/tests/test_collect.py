@@ -8,7 +8,6 @@ import unittest
 from pathlib import Path
 
 os.chdir("../")
-print(os.getcwd())
 sys.path.append(f"{os.getcwd()}/code/")
 
 from collect import obtain_links #pylint: disable=import-error,wrong-import-position

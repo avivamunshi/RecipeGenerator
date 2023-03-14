@@ -80,7 +80,7 @@ def link_store_file(set_links):
         "The links of a web is not conainted"+
         "as a set data type.")
 
-    path = Path('./Code/web_links.csv')
+    path = Path('./code/web_links.csv')
     mode = 'a' if path.is_file() else 'w'
     with open('web_links.csv', mode, newline='', encoding="utf8") as csvfile:
         writer = csv.writer(csvfile)

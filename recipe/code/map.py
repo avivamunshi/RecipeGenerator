@@ -11,7 +11,7 @@ recipe_json_list = []
 function_dir = os.path.dirname(os.path.abspath(__file__))
 
 # construct the path to the CSV file using the script directory as the base path
-csv_path = os.path.join(function_dir, '../Code/web_links.csv')
+csv_path = os.path.join(function_dir, '../code/web_links.csv')
 
 # check if the CSV file exists before proceeding
 if os.path.exists(csv_path):
