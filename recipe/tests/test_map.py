@@ -5,7 +5,7 @@ import os
 from unittest.mock import mock_open, patch
 #sys.path.insert(1, f"{os.getcwd()}/Code")
 
-from map import find_recipe #pylint: disable=import-error
+from code.map import find_recipe #pylint: disable=import-error
 
 #from pathlib import Path
 os.chdir("../")
