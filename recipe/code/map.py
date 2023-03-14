@@ -3,7 +3,7 @@ import os
 import csv
 import json
 import random
-from recipe_scrapers import scrape_me
+from recipe_scrapers import scrape_me #pylint: disable=import-error
 
 recipe_json_list = []
 
