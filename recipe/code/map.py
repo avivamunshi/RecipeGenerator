@@ -46,7 +46,7 @@ j   son.JSONDecodeError: If the recipe data file cannot be decoded.
     """
 
     # get the absolute path of the directory containing this script
-    script_dir = os.path.dirname(os.path.abspath(__file__))
+    # script_dir = os.path.dirname(os.path.abspath(__file__))
 
     # construct the path to the JSON file using the script directory as the base path
     # json_path = os.path.join(script_dir, 'recipe_json_list.txt')
@@ -62,7 +62,7 @@ j   son.JSONDecodeError: If the recipe data file cannot be decoded.
     #     recipe_data = None
 
     try:
-        with open('recipe_data.json', 'r') as file:
+        with open('recipe_data.json', 'r', encoding='utf-8') as file:
             recipe_data = json.load(file)
     except FileNotFoundError:
         print ("The recipe data file could not be found.")
