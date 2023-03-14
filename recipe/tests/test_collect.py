@@ -7,11 +7,16 @@ import sys
 import unittest
 from pathlib import Path
 
-os.chdir("../")
-sys.path.append(f"{os.getcwd()}/code/")
+# os.chdir("../")
+# sys.path.append(f"{os.getcwd()}/code/")
 
-from collect import obtain_links #pylint: disable=import-error,wrong-import-position
-from collect import link_store_file #pylint: disable=import-error,wrong-import-position
+# from collect import obtain_links #pylint: disable=import-error,wrong-import-position
+# from collect import link_store_file #pylint: disable=import-error,wrong-import-position
+
+# import from the collect.py file set sys path
+# to the parent directory of the current file
+from code.collect import obtain_links
+from code.collect import link_store_file
 
 class TestCollect(unittest.TestCase):
     """
