@@ -8,11 +8,12 @@ import unittest
 from pathlib import Path
 import requests
 
-from collect import obtain_links #pylint: disable=import-error
-from collect import link_store_file #pylint: disable=import-error
-
 os.chdir("../")
-sys.path.append(f"{os.getcwd()}/Code/")
+print(os.getcwd())
+sys.path.append(f"{os.getcwd()}/code/")
+
+from collect import obtain_links #pylint: disable=import-error,wrong-import-position
+from collect import link_store_file #pylint: disable=import-error,wrong-import-position
 
 class TestCollect(unittest.TestCase):
     """
@@ -92,7 +93,7 @@ class TestCollect(unittest.TestCase):
         'search/?content=recipe&search=recipe&page=')
         result = obtain_links(url)
         for element in result:
-            response = requests.get(element, timeout=5)
+            response = requests.get(element)
             self.assertEqual(response.status_code, 200)
 
     def test_link_store_file_smoke(self):
