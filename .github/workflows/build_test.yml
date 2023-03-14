@@ -85,6 +85,15 @@ jobs:
         run: |
           conda install --yes coverage
 
+      - name: Install Dependencies
+        run: |
+          conda install streamlit
+          conda install recipe-scrapers
+          conda install bs4
+          conda install requests
+          conda install pathlib
+          conda install pylint
+
       # If there are any other steps in order for your tests to
       # run successfully, you can add those steps here!
 
