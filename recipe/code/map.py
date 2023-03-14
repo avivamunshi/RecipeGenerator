@@ -3,30 +3,30 @@ import os
 import csv
 import json
 import random
-from recipe_scrapers import scrape_me #pylint: disable=import-error
+# from recipe_scrapers import scrape_me #pylint: disable=import-error
 
-recipe_json_list = []
+# recipe_json_list = []
 
-# get the absolute path of the directory containing this script
-function_dir = os.path.dirname(os.path.abspath(__file__))
+# # get the absolute path of the directory containing this script
+# function_dir = os.path.dirname(os.path.abspath(__file__))
 
-# construct the path to the CSV file using the script directory as the base path
-csv_path = os.path.join(function_dir, '../code/web_links.csv')
+# # construct the path to the CSV file using the script directory as the base path
+# csv_path = os.path.join(function_dir, '../code/web_links.csv')
 
-# check if the CSV file exists before proceeding
-if os.path.exists(csv_path):
-    with open(csv_path, encoding='utf-8') as file:
-        reader = csv.reader(file)
-        recipe_json_list = []
-        for row in reader:
-            url = row[0]
-            scraper = scrape_me(url, wild_mode=True)
-            recipe_json_list.append(scraper.to_json())
-else:
-    print("Error: Could not find web_links.csv file.")
+# # check if the CSV file exists before proceeding
+# if os.path.exists(csv_path):
+#     with open(csv_path, encoding='utf-8') as file:
+#         reader = csv.reader(file)
+#         recipe_json_list = []
+#         for row in reader:
+#             url = row[0]
+#             scraper = scrape_me(url, wild_mode=True)
+#             recipe_json_list.append(scraper.to_json())
+# else:
+#     print("Error: Could not find web_links.csv file.")
 
-with open('recipe_json_list.txt', 'w', encoding='utf-8') as file:
-    json.dump(recipe_json_list, file)
+# with open('recipe_json_list.txt', 'w', encoding='utf-8') as file:
+#     json.dump(recipe_json_list, file)
 
 def find_recipe(ingredients, refresh=False):
 
