@@ -8,4 +8,3 @@ dependencies:
   - pathlib
   - python=3
   - pylint
-  - recipe-scrapers

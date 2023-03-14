@@ -88,7 +88,6 @@ jobs:
       - name: Install Dependencies
         run: |
           conda install streamlit
-          conda install recipe-scrapers
           conda install bs4
           conda install requests
           conda install pathlib
