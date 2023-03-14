@@ -103,4 +103,3 @@ dependencies:
       - w3lib==2.1.1
       - webencodings==0.5.1
       - zipp==3.15.0
-prefix: /Users/aviva/opt/anaconda3/envs/environment1
