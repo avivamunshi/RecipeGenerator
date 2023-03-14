@@ -1,6 +1,5 @@
 """This module contains functions for finding recipes based on a list of ingredients."""
 import os
-import csv
 import json
 import random
 # from recipe_scrapers import scrape_me #pylint: disable=import-error
