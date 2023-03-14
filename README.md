@@ -1,3 +1,5 @@
+[![build_test](https://github.com/avivamunshi/RecipeGenerator/actions/workflows/build_test.yml/badge.svg)](https://github.com/avivamunshi/RecipeGenerator/actions/workflows/build_test.yml)
+
 [![Coverage Status](https://coveralls.io/repos/github/avivamunshi/RecipeGenerator/badge.svg?branch=main)](https://coveralls.io/github/avivamunshi/RecipeGenerator?branch=main)
 
 ## Team Members:
