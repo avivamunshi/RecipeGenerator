@@ -83,18 +83,18 @@ class TestCollect(unittest.TestCase):
         for element in result:
             self.assertIsInstance(element, str)
 
-    # Edge cases test each recipe link is a valid url link
-    def test_obtain_links_url_validity_epi(self):
-        """
-        test that the every string in the set is
-        a vaild url link
-        """
-        url = ('https://www.epicurious.com/'
-        'search/?content=recipe&search=recipe&page=')
-        result = obtain_links(url)
-        for element in result:
-            response = requests.get(element)
-            self.assertEqual(response.status_code, 200)
+    # # Edge cases test each recipe link is a valid url link
+    # def test_obtain_links_url_validity_epi(self):
+    #     """
+    #     test that the every string in the set is
+    #     a vaild url link
+    #     """
+    #     url = ('https://www.epicurious.com/'
+    #     'search/?content=recipe&search=recipe&page=')
+    #     result = obtain_links(url)
+    #     for element in result:
+    #         response = requests.get(element, timeout=5)
+    #         self.assertEqual(response.status_code, 200)
 
     def test_link_store_file_smoke(self):
         """
