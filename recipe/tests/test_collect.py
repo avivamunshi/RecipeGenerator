@@ -3,7 +3,6 @@ A unittest module for collecting weblinks
 and writing them into a csv.
 """
 import os
-import sys
 import unittest
 from pathlib import Path
 
