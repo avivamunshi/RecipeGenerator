@@ -65,7 +65,7 @@ def obtain_links(url_baselink):
 
 def link_store_file(set_links):
     """
-    The function writes a set of stings in a csv file.
+    The function writes a set of strings in a csv file.
     The function takes a set of strings,set_links, as a
     parameter.
     The function returns none and is void since the process
@@ -77,7 +77,7 @@ def link_store_file(set_links):
     """
     if not isinstance(set_links, set):
         raise ValueError(
-        "The links of a web is not conainted"+
+        "The links of a web is not contained"+
         "as a set data type.")
 
     path = Path('./code/web_links.csv')
