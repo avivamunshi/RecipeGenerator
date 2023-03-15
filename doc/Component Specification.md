@@ -9,7 +9,7 @@
 **Inputs:** A subset of web pages that have recipes (web recipe links)
 
 **Preliminary Output:** List of dictionaries that includes recipes and links to the original web page. Each dictionary has a key (the web link)
-***Current Output**
+**Current Output**
 Saves a set of url web links into a csv bypassing the
 time request constraints and proxy all
 Webl_links.csv is wriiten the directry of the code.
