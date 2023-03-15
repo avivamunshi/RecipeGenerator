@@ -50,30 +50,31 @@ RecipeGenerator/
 |__ Setup.py
 ├── doc/
   |- Component Specification.md
-	|- Functional Specification.md
-	|- Technology Review Presentation.pdf
-	|- Recipe FinalPresentation.pdf
+  |- Functional Specification.md
+  |- Technology Review Presentation.pdf
+  |- Recipe Final Presentation.pdf
 |__ .github/workflows/
-   |_ build_test.yml
-|—- enviorment2.yml
+  |_ build_test.yml
+|—- environment2.yml
 ├── README.md
 |__ example
-   |_ http weblinks of the streamlit app webpage
-   |_ recipe generated
-   |- recipe generated
+   |_ Base_user_input.jpeg
+   |_ auto_generate_recipe.jpeg
+   |- recipe_generate.jpeg
 |── recipe /
     |__code/
         ├── ____init__.py
+	|__ recipe-scrapers
         |-— app.py
         └── collect.py
-		    └── Map.py
-		    └── streamlit.py
+	└── map.py
         |__recipe_json_list.txt
         |__ web_links.csv
      └── tests/
          ├── ____init__.py
-		     |__ test_collect.py
+	 |__ test_collect.py
          |__ test_map.py
+	 |__ web_links.csv
 ```
 ###  License
 Justification for using the MIT License:
