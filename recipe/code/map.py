@@ -28,7 +28,7 @@ import random
 # with open('recipe_json_list.txt', 'w', encoding='utf-8') as file:
 #     json.dump(recipe_json_list, file)
 
-def find_recipe(ingredients, refresh=False):
+def find_recipe(ingredients):
 
     """
     Find a recipe that includes all the specified ingredients.
