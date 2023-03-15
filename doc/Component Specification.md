@@ -8,8 +8,11 @@
 
 **Inputs:** A subset of web pages that have recipes ( web recipe links )
 
-**Output:** List of dictionaries that includes recipes and links to the original web page. Each dictionary has a key ( the web link)  and value( food ingredients).
-
+**Preliminary Output:** List of dictionaries that includes recipes and links to the original web page. Each dictionary has a key ( the web link)
+***Curren Output**
+Saves a set of url web links into a csv bypassing the
+time request constraints and proxy all
+Webl_links.csv is wriiten the directry of the code.
 ## Component 2: Webpage to collect user input
 
 **Name:** Web App
@@ -18,9 +21,9 @@
 
 **Inputs:**
  Dietary Requirements (a string in the form of options)
-Ingredients (a string)
+Ingredients (a string) user case
 
-**Outputs:** A recipe that uses the ingredients mentioned in the input (text)
+**Outputs:** A recipe that uses the ingredients mentioned that is called from running an import from the map.py fille
 
 **Assumptions:**
 The ingredients should be food items with the assumption that the basic condiments are a staple in everyone’s pantry
@@ -33,16 +36,19 @@ There should be at least 3-4 ingredients listed to get an appropriate recipe
 **What it does:** Maps user inputs from the Web App to the corresponding database entries and retrieves the corresponding webpage output.
 
 **Inputs:**
-User input from the Web App (e.g. dietary requirements, ingredients)
-Database with recipe information (e.g. recipe ingredients, preparation instructions)
+User input from the Web App (e.g. ingredients, image, url, instructions, title)
+Csv file of the collected url web links of 300 to 400 recipe links.
 
 **Outputs:**
-Webpage output containing the recipe that meets the user's input criteria (e.g. recipe name, ingredients, preparation instructions)
+Webpage output containing the recipe that meets the user's input criteria (e.g. recipe name, ingredients, preparation instructions) Returning a json file of a dictonary. to be use in the streamlit
 
 **Assumptions:**
+
 The database contains all necessary recipe information to satisfy user input criteria.
 The database can handle multiple user requests simultaneously.
 User input is sanitized and validated to prevent SQL injection and other security risks.
+The Github recipe_scrapers package takes the
+an individual url web link and extracts the information correctly
 
 # Specification for each component
 
@@ -68,23 +74,35 @@ There are no already made components except having recipe web links preplanned a
 
 ## Component 3: Mapping User input to Database to webpage output
 
-1. Packages: Beautiful Soup, Streamlit
-2. Modules: importing urlib, python request
-3. Resources: recipe box is an open source that explains a similar step process, Streamlit Documentation
+1. Packages: recipe_scrapers scrape me, Streamlit,
+2. Modules: importing os csv json random
+and attachement of the Github package repository.
+3. Resources: Recipe Scrapers  is an open source github package that extracts the indivual tags of components of url web site   Streamlit Documentation
 4. Data: Web links of recipe websites
 5. Functions:
-    - CollectRecipeFromLink(url): a sub-function that uses Beautiful Soup and urlib to extract the recipe text from a given web link and returns it as a string
-    - StoreRecipe(recipe): a sub-function that takes a recipe string as input and stores it in a database of recipes
-    - MapInputToRecipe(user_input): a function that takes user input (e.g. a list of ingredients) and maps it to a recipe from the database by comparing the input to the ingredients listed in each recipe. If a match is found, the function returns the recipe's web link.
-    - DisplayRecipe(web_link): a function that uses Streamlit to display the recipe instructions and picture from a given web link
+    - Reads in a web links csv file
+    that is the collection of recipes from
+    bonappetit and epicurious.
+    - find_recipe(ingredients, refresh=False):
+    Find a recipe that includes all the specified ingredients.
+    - Args:
+        ingredients (str): A comma-separated string of ingredients.
+        refresh (bool, optional): Whether to randomly shuffle the recipe list. Defaults to False.
+    Further the try-except block raises:
+    FileNotFoundError: If the recipe data file cannot be found. json.JSONDecodeError: If the recipe data file cannot be decoded.
+
 6. Pre_Components:
     - A database of recipes (created in Component 1) with web links and associated ingredients
     - A web page to collect user input (created in Component 2)
+    - Git Hub package recipe_scrapers import scrape_me
+    that looks into the recipes and collects the tag
+    of each component encoded in the html proccess
 
-# Pseudocode
+#  Pre_Pseudocode
 
 ```
 Functions:
+old Process
   get_recipe_from_link(link):
       # Given a recipe link, this function extracts relevant data and returns a dictionary with the recipe information
       recipe = {}
@@ -104,6 +122,25 @@ Functions:
       # Given a dictionary of recipe information, this function stores it in the database
       # Here, we'll just print the recipe information to simulate storing it
       print(f"Storing recipe:\n{recipe}\n")
+
+Current Process:
+recipe_json_list = []
+
+# get the absolute path of the directory containing this script
+function_dir = os.path.dirname(os.path.abspath(__file__))
+
+# construct the path to the CSV file using the script directory as the base path
+csv_path = os.path.join(function_dir, '../Code/web_links.csv')
+
+# check if the CSV file exists before proceeding
+if os.path.exists(csv_path):
+    with open(csv_path, encoding='utf-8') as file:
+        reader = csv.reader(file)
+        recipe_json_list = []
+        for row in reader:
+            url = row[0]
+            scraper = scrape_me(url, wild_mode=True)
+            recipe_json_list.append(scraper.to_json())
 ```
 
 # Interaction Diagram
