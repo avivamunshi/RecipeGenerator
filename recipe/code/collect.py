@@ -2,8 +2,6 @@
 A set of functions that search through a url search page and
 collects recipe links written into a csv file.
 """
-from pathlib import Path
-import csv
 from bs4 import BeautifulSoup as bs
 import requests
 
