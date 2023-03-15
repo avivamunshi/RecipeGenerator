@@ -29,11 +29,6 @@ def obtain_links(url_baselink):
     'AppleWebKit/537.36 (KHTML, like Gecko)'
     ' Chrome/110.0.0.0 Safari/537.36')}
 
-    if not isinstance(url_baselink, str):
-        raise ValueError(
-        "The url link parameter"
-        " must be a string data type.")
-
     with requests.Session() as session:
         req = session.get(url_baselink, headers=header)
     soup = bs(req.text, 'lxml')
@@ -52,43 +47,30 @@ def obtain_links(url_baselink):
                     if epi_base_site in url_baselink:
                         web_links.add(epi_base_site+url)
 
-    if not isinstance(web_links, set):
-        raise ValueError("Web links is not containted"
-        +"inside a set data type.")
-
-    for element in web_links:
-        if not isinstance(element, str):
-            raise ValueError("The recipe link is not"
-            " a string data type")
-
     return web_links
 
-def link_store_file(set_links):
-    """
-    The function writes a set of strings in a csv file.
-    The function takes a set of strings,set_links, as a
-    parameter.
-    The function returns none and is void since the process
-    is writing a file in your file system.
+# def link_store_file(set_links):
+#     """
+#     The function writes a set of strings in a csv file.
+#     The function takes a set of strings,set_links, as a
+#     parameter.
+#     The function returns none and is void since the process
+#     is writing a file in your file system.
 
-    Raise Exception errors:
-    Raises a value error if the parameter
-    set links is not a set.
-    """
-    if not isinstance(set_links, set):
-        raise ValueError(
-        "The links of a web is not contained"+
-        "as a set data type.")
+#     Raise Exception errors:
+#     Raises a value error if the parameter
+#     set links is not a set.
+#     """
 
-    path = Path('./code/web_links.csv')
-    mode = 'a' if path.is_file() else 'w'
-    with open('web_links.csv', mode, newline='', encoding="utf8") as csvfile:
-        writer = csv.writer(csvfile)
-        writer.writerows([[link] for link in set_links])
+#     path = Path('./code/web_links.csv')
+#     mode = 'a' if path.is_file() else 'w'
+#     with open('web_links.csv', mode, newline='', encoding="utf8") as csvfile:
+#         writer = csv.writer(csvfile)
+#         writer.writerows([[link] for link in set_links])
 
-    if path.is_file() is not True:
-        raise ValueError("File was not created into"
-        "the directory")
+#     if path.is_file() is not True:
+#         raise ValueError("File was not created into"
+#         "the directory")
 
 def main():
     """
@@ -117,7 +99,7 @@ def main():
         bon_search_page = base_bon_search_page + str(page_num)
         set_page_link.update(obtain_links(bon_search_page))
 
-    link_store_file(set_page_link)
+    # link_store_file(set_page_link)
 
 if __name__ == '__main__':
     main()
