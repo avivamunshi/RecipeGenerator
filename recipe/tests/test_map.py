@@ -58,6 +58,10 @@ class TestFindRecipe(unittest.TestCase):
             recipe = find_recipe(self.ingredients)
             self.assertIsNotNone(recipe)
 
+    def test_file_not_found(self):
+        with self.assertRaises(FileNotFoundError):
+            find_recipe("non_existent_file.txt")
+
 
 if __name__ == '__main__':
     unittest.main()
