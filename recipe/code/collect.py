@@ -38,8 +38,8 @@ def obtain_links(url_baselink):
             if url not in link:
                 if bon_base_site in url_baselink and bon_site in url:
                     web_links.add(url)
-                elif bon_base_site in url_baselink and\
-                    not 'htt' in url:
+                # elif bon_base_site in url_baselink and\
+                #     not 'htt' in url:
                     web_links.add(bon_base_site+url)
                 else:
                     if epi_base_site in url_baselink:
