@@ -59,6 +59,7 @@ class TestFindRecipe(unittest.TestCase):
             self.assertIsNotNone(recipe)
 
     def test_file_not_found(self):
+        """Test when the file is not found"""
         with self.assertRaises(FileNotFoundError):
             find_recipe("non_existent_file.txt")
 
