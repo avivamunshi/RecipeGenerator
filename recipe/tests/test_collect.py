@@ -3,6 +3,7 @@ A unittest module for collecting weblinks
 and writing them into a csv.
 """
 import unittest
+import pathlib
 
 # os.chdir("../")
 # sys.path.append(f"{os.getcwd()}/code/")
@@ -13,6 +14,7 @@ import unittest
 # import from the collect.py file set sys path
 # to the parent directory of the current file
 from code.collect import obtain_links
+from code.collect import link_store_file
 
 class TestCollect(unittest.TestCase):
     """
