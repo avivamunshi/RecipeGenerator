@@ -51,18 +51,21 @@ j   son.JSONDecodeError: If the recipe data file cannot be decoded.
     # construct the path to the JSON file using the script directory as the base path
     json_path = os.path.join(script_dir, 'recipe_json_list.txt')
 
-    try:
-        with open(json_path, 'r', encoding='utf-8') as f_1:
-            recipe_data = json.load(f_1)
-    except FileNotFoundError:
-        print("The recipe data file could not be found.")
-        recipe_data = None
-    except json.JSONDecodeError:
-        print("The recipe data file could not be decoded.")
-        recipe_data = None
+    with open(json_path, 'r', encoding='utf-8') as f_1:
+        recipe_data = json.load(f_1)
 
-    if refresh:
-        random.shuffle(recipe_data)
+    # try:
+    #     with open(json_path, 'r', encoding='utf-8') as f_1:
+    #         recipe_data = json.load(f_1)
+    # except FileNotFoundError:
+    #     print("The recipe data file could not be found.")
+    #     recipe_data = None
+    # except json.JSONDecodeError:
+    #     print("The recipe data file could not be decoded.")
+    #     recipe_data = None
+
+    # if refresh:
+    #     random.shuffle(recipe_data)
 
     ingredients_list = [i.strip().lower() for i in ingredients.split(',')]
     matching_recipes = []
