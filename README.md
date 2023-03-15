@@ -46,7 +46,7 @@ The structure of the code for how we upload and have our file system:
 #### structure
 ```
 RecipeGenerator/
-├── LICENSE.
+├── LICENSE
 |__ Setup.py
 ├── doc/
   |- Component Specification.md
