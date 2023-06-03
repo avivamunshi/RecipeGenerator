@@ -47,28 +47,28 @@ def obtain_links(url_baselink):
 
     return web_links
 
-# def link_store_file(set_links):
-#     """
-#     The function writes a set of strings in a csv file.
-#     The function takes a set of strings,set_links, as a
-#     parameter.
-#     The function returns none and is void since the process
-#     is writing a file in your file system.
+def link_store_file(set_links):
+    """
+    The function writes a set of strings in a csv file.
+    The function takes a set of strings,set_links, as a
+    parameter.
+    The function returns none and is void since the process
+    is writing a file in your file system.
 
-#     Raise Exception errors:
-#     Raises a value error if the parameter
-#     set links is not a set.
-#     """
+    Raise Exception errors:
+    Raises a value error if the parameter
+    set links is not a set.
+    """
 
-#     path = Path('./code/web_links.csv')
-#     mode = 'a' if path.is_file() else 'w'
-#     with open('web_links.csv', mode, newline='', encoding="utf8") as csvfile:
-#         writer = csv.writer(csvfile)
-#         writer.writerows([[link] for link in set_links])
+    path = Path('./code/web_links.csv')
+    mode = 'a' if path.is_file() else 'w'
+    with open('web_links.csv', mode, newline='', encoding="utf8") as csvfile:
+        writer = csv.writer(csvfile)
+        writer.writerows([[link] for link in set_links])
 
-#     if path.is_file() is not True:
-#         raise ValueError("File was not created into"
-#         "the directory")
+    if path.is_file() is not True:
+        raise ValueError("File was not created into"
+        "the directory")
 
 def main():
     """
