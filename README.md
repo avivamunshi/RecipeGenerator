@@ -117,7 +117,7 @@ The output dictionary is the input for the streamlit app, app.py
 
 ##### app.py
 app.py
-This is our streamlit app, and you need to run the command "streamlit run streamlit.py" in your command prompt to execute it.
+This is our streamlit app, and you need to run the command "streamlit run app.py" in your command prompt to execute it.
 Note - you'll need streamlit installed in your file system for this!
 
 
