@@ -2,11 +2,6 @@
 
 Coverage: https://coveralls.io/github/avivamunshi/RecipeGenerator
 
-## Team Members:
-Aviva Munshi<br>
-Saumya Nauni<br>
-Nizan Howard<br>
-
 ## Project Overview:
 
 ### Project type:
